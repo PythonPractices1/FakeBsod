@@ -1,0 +1,28 @@
+k=0
+Setup:
+GraphicsWindow.BackgroundColor="#0078d7"
+GraphicsWindow.BrushColor="white"
+GraphicsWindow.FontBold=False
+GraphicsWindow.FontName="Trebuchet MS"
+GraphicsWindow.FontSize=200
+GraphicsWindow.DrawText(0+30, 0, ":(")
+GraphicsWindow.FontSize=35
+
+GraphicsWindow.DrawText(0+30, 300, "Your PC ran into a problem and needs to restart. We're")
+GraphicsWindow.DrawText(0+30, 165+175, "just collecting some error info, and then we'll restart for")
+GraphicsWindow.DrawText(0+30, 205+175, "you.")
+GraphicsWindow.DrawImage("http://xontab.com/experiments/Javascript/BSOD/qr.png",0+30,405+175)
+GraphicsWindow.FontSize=25
+GraphicsWindow.DrawText(325+30, 405+175, "For more information about the issue and possible fixes, visit https://www.windows.com/stopcode")
+GraphicsWindow.FontSize=15
+GraphicsWindow.DrawText(325+30, 675+165, "If you call a support person, give them this info: ")
+GraphicsWindow.DrawText(325+30, 700+165, "Stop code: CRITICAL_PROCESS_DIED")
+GraphicsWindow.FontSize=35
+
+for i = 1 to 100
+    GraphicsWindow.DrawText(0+30, 305+175, k+"% complete")
+    Program.Delay(1000)
+    GraphicsWindow.Clear()
+    k = k+1
+    goto Setup
+EndFor
